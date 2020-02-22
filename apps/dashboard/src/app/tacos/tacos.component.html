@@ -1,0 +1,16 @@
+<div class="container d-flex mt-3">
+  <div class="col-6">
+    <mdv-twenty-eight-tacos-list [tacos]="tacos$ | async"
+                          (selected)="selectTaco($event)"
+                          (deleted)="deleteTaco($event)">
+    </mdv-twenty-eight-tacos-list>
+  </div>
+
+  <div class="col-6">
+    <mdv-twenty-eight-tacos-details [taco]="selectedTaco$ | async"
+                              [form]="form"
+                              (saved)="saveTaco($event)"
+                              (cancelled)="cancel()">
+    </mdv-twenty-eight-tacos-details>
+  </div>
+</div>

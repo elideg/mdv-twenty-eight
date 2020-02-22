@@ -1,0 +1,25 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1 class="border-bottom">Tacos</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let taco of tacos; let last = last;" (click)="select(taco)" class="mat-list-option border-bottom" [ngClass]="{'no-bottom-border': last}">
+        <h3 mat-line>
+          {{taco.name}}
+        </h3>
+        <p mat-line>
+          {{taco.description}}
+        </p>
+        <button mat-mini-fab (click)="delete(taco); $event.stopImmediatePropagation()" class="mr-3">
+        <mat-icon>close</mat-icon>
+        </button>
+        <button mat-icon-button class="mr-2" [routerLink]="taco.id" routerLinkActive="active" >
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

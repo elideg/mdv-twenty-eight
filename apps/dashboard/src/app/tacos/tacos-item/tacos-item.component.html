@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center mt-3">
+  <button mat-button [routerLink]="['/tacos']">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <mat-card class="col-6" *ngIf="tacos$ | async as taco">
+    <mat-card-header class="align-self-center">
+      <mat-card-title>
+        <h3 mat-line>Taco Id</h3>
+        <p>{{taco.id}}</p>
+        <h3 mat-line>Taco Name</h3>
+        <p>{{taco.name}}</p>
+        <h3 mat-line>Taco Calories</h3>
+        <p>{{taco.calories}}</p>
+        <h3 mat-line>Taco Meat</h3>
+        <p>{{taco.protein}}</p>
+        <h3 mat-line>Taco Salsa</h3>
+        <p>{{taco.salsa}}</p>
+      </mat-card-title>
+    </mat-card-header>
+  </mat-card>
+</div>
